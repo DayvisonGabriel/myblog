@@ -18,7 +18,7 @@ body {
 
 .eye-image {
   position: absolute;  /* <-- Necessário para centralizar com transform */
-  top: 40%;
+  top: 50%;
   left: 50%;
   width: auto;
   height: 100%;
@@ -31,7 +31,7 @@ body {
 
 .title {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.1); /* começa pequeno no centro */
   color: white;
@@ -44,6 +44,7 @@ body {
     opacity 0.5s ease-in-out;
   z-index: 10;
 }
+
 
 
 
