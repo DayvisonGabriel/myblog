@@ -11,7 +11,7 @@ body {
 
 .container {
   position: relative;
-  width: 200vw;
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
@@ -36,12 +36,14 @@ body {
   transform: translate(-50%, -50%) scale(0.1); /* começa pequeno no centro */
   color: white;
   font-size: 10rem;
+  width: 50vw;
   opacity: 0;
   transition: 
     transform 1.5s ease-in-out,  /* crescer junto com o zoom */
     opacity 0.5s ease-in-out;
   z-index: 10;
 }
+
 
 
 
