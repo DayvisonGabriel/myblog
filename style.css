@@ -35,13 +35,14 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.1); /* começa pequeno no centro */
   color: white;
-  font-size: 5rem;
+  font-size: 10rem;
   opacity: 0;
   transition: 
     transform 1.5s ease-in-out,  /* crescer junto com o zoom */
     opacity 0.5s ease-in-out;
   z-index: 10;
 }
+
 
 
 
