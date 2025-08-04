@@ -26,7 +26,7 @@ function blinkTwiceThenZoom() {
     
     // Faz o título crescer junto com o zoom
     title.style.opacity = 1;
-    title.style.transform = 'translate(-50%, -50%) scale(0.5)';
+    title.style.transform = 'translate(-50%, -50%) scale(1)';
   }
 }
 
@@ -43,4 +43,5 @@ eyeImage.addEventListener('click', () => {
 
   setTimeout(blinkTwiceThenZoom, 300);
 });
+
 
