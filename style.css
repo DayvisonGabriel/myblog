@@ -36,6 +36,7 @@ body {
   transform: translate(-50%, -50%) scale(0.1); /* começa pequeno no centro */
   color: white;
   font-size: 8rem;
+  justify-content: center;
   width: 80%;
   opacity: 0;
   transition: 
@@ -43,6 +44,7 @@ body {
     opacity 0.5s ease-in-out;
   z-index: 10;
 }
+
 
 
 
