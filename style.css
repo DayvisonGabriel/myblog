@@ -11,7 +11,7 @@ body {
 
 .container {
   position: relative;
-  width: 100vw;
+  width: 200vw;
   height: 100vh;
   overflow: hidden;
 }
@@ -42,5 +42,6 @@ body {
     opacity 0.5s ease-in-out;
   z-index: 10;
 }
+
 
 
