@@ -18,7 +18,7 @@ body {
 
 .eye-image {
   position: absolute;  /* <-- Necessário para centralizar com transform */
-  top: 50%;
+  top: 40%;
   left: 50%;
   width: auto;
   height: 100%;
@@ -44,6 +44,7 @@ body {
     opacity 0.5s ease-in-out;
   z-index: 10;
 }
+
 
 
 
