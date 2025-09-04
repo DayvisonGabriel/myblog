@@ -52,9 +52,9 @@ function startAnimation() {
 
   // Remove os event listeners após a animação ser acionada
   document.removeEventListener('click', startAnimation);
-  document.removeEventListener('scroll', startAnimation);
+  document.removeEventListener('wheel', startAnimation);
 }
 
-// Adiciona event listeners para 'click' e 'scroll'
+// Adiciona event listeners para 'click' e 'wheel'
 document.addEventListener('click', startAnimation);
-document.addEventListener('scroll', startAnimation);
+document.addEventListener('wheel', startAnimation);
