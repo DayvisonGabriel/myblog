@@ -1,57 +1,222 @@
 body {
-  margin: 0;
-  background-color: #001633;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  font-family: sans-serif;
+    margin: 0;
+    background-color: #001633;
+    overflow-x: hidden;
+    font-family: sans-serif;
+    height: 100vh;
+    width: 100vw;
 }
 
-.container {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+/* -------------------- ESTILOS DA ANIMAÇÃO DE ABERTURA -------------------- */
+.intro-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transition: opacity 1s ease-in-out, visibility 1s 1s;
 }
 
 .eye-image {
-  position: absolute;  /* <-- Necessário para centralizar com transform */
-  top: 50%;
-  left: 50%;
-  width: auto;
-  height: 100%;
-  max-width: 100%;
-  transform: translate(-50%, -50%);
-  transition: transform 1.5s ease-in-out, opacity 0.5s ease;
-  object-fit: cover;
-  z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    transform: translate(-50%, -50%);
+    transition: transform 1.5s ease-in-out, opacity 0.5s ease;
+    object-fit: cover;
+    z-index: 1;
 }
 
 .title {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.1); /* começa pequeno no centro */
-  color: white;
-  font-size: 8rem;
-  text-align: center;
-  white-space: nowrap;
-  opacity: 0;
-  transition: 
-    transform 1.5s ease-in-out,  /* crescer junto com o zoom */
-    opacity 0.5s ease-in-out;
-  z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    color: white;
+    font-size: 10rem;
+    opacity: 0;
+    transition:
+        transform 1.5s ease-in-out,
+        opacity 0.5s ease-in-out;
+    z-index: 10;
 }
 
+/* -------------------- ESTILOS DO CONTEÚDO DO BLOG (IS-VISIBLE) -------------------- */
+.blog-content {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out, visibility 0s 1s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: #001633;
+}
 
+.blog-content.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0s;
+}
 
+/* -------------------- ESTILOS DA LINHA DO TEMPO HORIZONTAL (CONSTELAÇÃO) -------------------- */
+.constellation-timeline-header {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
 
+.constellation-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 20px;
+}
 
+.constellation-item {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    position: relative;
+    z-index: 2;
+}
 
+.constellation-item::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: #f7d057;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #f7d057;
+    z-index: 1;
+}
 
+/* -------------------- ESTILOS DO LAYOUT PRINCIPAL (BARRA LATERAL + CONTEÚDO) -------------------- */
+.main-layout {
+    display: grid;
+    grid-template-columns: 29vw 1px 70vw;
+    gap: 0px;
+    padding: 0;
+    min-height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+}
 
+/* Estilos para o menu lateral (sidebar) */
+.sidebar {
+    background-color: #001633;
+    padding: 0px;
+    color: white;
+    box-sizing: border-box;
+    border-left: 10vw solid #001633;
+	grid-column: 1;
+}
 
+.sidebar-name {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
 
+.sidebar-nav {
+    margin-top: 20px;
+}
 
+.sidebar-link {
+    display: block;
+    color: #a0a0a0;
+    text-decoration: none;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.sidebar-link:hover {
+    color: #f7d057;
+}
+
+/* -------------------- ESTILOS DA LINHA DO TEMPO VERTICAL -------------------- */
+.vertical-timeline {
+    position: relative;
+    padding: 20px 0 20px 50px;
+    color: #e0e0e0;
+	grid-column: 3;
+}
+
+.vertical-timeline::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: transparent;
+    border-left: 2px dotted #f7d057;
+	grid-column: 3;
+}
+
+/* Contêiner que o JavaScript preenche com os itens da timeline */
+.timeline-content {
+    display: flex;
+    flex-direction: column;
+	grid-column: 3;
+}
+
+/* Cada item da timeline (ponto + texto) */
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    position: relative;
+	grid-column: 3;
+}
+
+/* A bolinha que o JS cria */
+.timeline-point-dot {
+    position: relative;
+    left: -31px; /* Alinha a bolinha com a linha do tempo */
+    top: 500px;
+    width: 12px;
+    height: 12px;
+    background-color: #f7d057;
+    border-radius: 50%;
+    z-index: 2;
+    border: 2px solid #001633;
+}
+
+/* O container do texto do artigo */
+.timeline-item-text {
+    padding-left: 20px; /* Adiciona o espaço entre a bolinha e o texto */
+}
+
+.timeline-item-text h2 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.timeline-item-text h3 {
+    color: #a0a0a0;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.timeline-item-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+}

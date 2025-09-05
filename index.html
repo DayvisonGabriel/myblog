@@ -1,16 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dayvision Labs</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dayvision Labs</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="post-list.js"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
-  <div class="container">
-    <img id="eyeImage" src="wallpaper-fechado.png" alt="Olho" class="eye-image">
-    <h1 id="title" class="title">Dayvision Labs</h1>
-  </div>
+    <div id="intro-container" class="intro-container">
+        <img id="eyeImage" src="wallpaper-fechado.png" alt="Olho" class="eye-image">
+        <h1 id="title" class="title">Dayvision Labs</h1>
+    </div>
+
+    <div id="blog-content" class="blog-content">
+        <header id="constellation-timeline-header" class="constellation-timeline-header">
+            <nav class="constellation-nav">
+                <a href="#about" class="constellation-item">Sobre</a>
+                <a href="#tonfolio" class="constellation-item">Portifolio</a>
+                <a href="#timeline-vertical" class="constellation-item">Timeline</a>
+                <a href="#contact" class="constellation-item">Contato</a>
+            </nav>
+        </header>
+
+        <main class="main-layout">
+            <aside class="sidebar">
+                <h1 class="sidebar-name">Dayvison Gabriel</h1>
+                <nav class="sidebar-nav">
+                    <a href="#about" class="sidebar-link">Sobre</a>
+                    <a href="#tonfolio" class="sidebar-link">Portifolio em Construção</a>
+                    <a href="#contact" class="sidebar-link">Contato</a>
+                </nav>
+            </aside>
+
+            <section id="timeline-vertical" class="vertical-timeline">
+                                <div class="timeline-points"></div>
+                <div class="timeline-content"></div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>

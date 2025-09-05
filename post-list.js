@@ -1,0 +1,1 @@
+const postFiles = ['Artigos/Artigo 1.json', 'Artigos/Artigo 2.json'];
